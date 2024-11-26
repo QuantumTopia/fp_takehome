@@ -1,0 +1,19 @@
+<h1>Booking#new</h1>
+
+<%= form_with model: @booking do |form| %>
+    <div>
+        <%= form.label :number_of_tickets %><br>
+        <%= form.text_field :number_of_tickets %>
+        
+        <% @booking.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+        <%= form.hidden_field :event_id, :value => params[:event_id] %>
+        <%= hidden_field_tag 'selected', 'none'  %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
+  

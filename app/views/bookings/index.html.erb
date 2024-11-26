@@ -1,0 +1,9 @@
+<h1>Events#index</h1>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= link_to booking.event.title, event %>
+    </li>
+  <% end %>
+</ul>

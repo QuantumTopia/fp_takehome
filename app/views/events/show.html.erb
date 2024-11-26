@@ -5,4 +5,6 @@
 <p><%= @event.date_time %></p>
 <p><%= @event.tickets_available %></p>
 
+<%= link_to "Create booking", new_booking_path(@event.id) %>
+
 <a href="/users#index">Back to user profile</a>

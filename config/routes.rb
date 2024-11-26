@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-
   root "users#index"
   resources :events, only: [:index, :show, :new, :create] do
     get :my_events, on: :collection
   end
   devise_for :users
   resources :users
+  resources :bookings, path_names: {new: 'new/:event_id'}
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
