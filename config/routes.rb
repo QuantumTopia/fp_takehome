@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root "events#index"
-  get "events/index"
+  root "users#index"
+  resources :events
   # root to: "home#index"
   devise_for :users
   resources :users

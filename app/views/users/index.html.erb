@@ -1,3 +1,6 @@
 <h1>Hi There!!</h1>
+<%= link_to "Create event", new_event_path %>
+<p>View events signed up for</p>
+<a href="/events#index">Events</a>
 
 <%= button_to "logout", destroy_user_session_path, method: :delete  %>
