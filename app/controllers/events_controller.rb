@@ -4,6 +4,10 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def my_events
+    @events = Event.where(user_id: current_user.id)
+  end
+
   def show
     @event = Event.find(params[:id])
   end
@@ -14,6 +18,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
 
     if @event.save
       redirect_to @event
