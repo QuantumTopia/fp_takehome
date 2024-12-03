@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_26_153608) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_03_105753) do
   create_table "bookings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_26_153608) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.integer "tickets_remaining", null: false
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 

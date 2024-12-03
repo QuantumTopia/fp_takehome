@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
+    @event.tickets_remaining = event_params[:tickets_available]
 
     if @event.save
       redirect_to @event

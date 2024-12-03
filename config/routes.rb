@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show, :new, :create] do
     get :my_events, on: :collection
   end
-  resources :bookings, only: [:index, :show, :new, :create] do
+  resources :bookings, only: [:index, :show, :create] do
     get :booked_events, on: :collection
   end
   devise_for :users
