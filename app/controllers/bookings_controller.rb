@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @bookings = Booking.where(user_id: current_user.id)
   end
@@ -14,21 +15,23 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(params.expect(booking: [:number_of_tickets, :event_id]))
-    @booking.user = current_user
-    @booking.event = Event.find(params[:booking][:event_id])
-    enough_tickets = true
+    Booking.transaction do
+      @booking = Booking.new(params.expect(booking: [:number_of_tickets, :event_id]))
+      @booking.user = current_user
+      @booking.event = Event.find(params[:booking][:event_id])
+      enough_tickets = true
 
-    if enough_tickets_remaining(@booking)
-      @booking.event.tickets_remaining = @booking.event.tickets_remaining - @booking.number_of_tickets
-    else
-      enough_tickets = false
-    end
+      if enough_tickets_remaining(@booking)
+        @booking.event.tickets_remaining = @booking.event.tickets_remaining - @booking.number_of_tickets
+      else
+        enough_tickets = false
+      end
 
-    if enough_tickets and @booking.event.save and @booking.save
-      redirect_to @booking
-    else
-      render :new, status: :unprocessable_entity
+      if enough_tickets and @booking.event.save and @booking.save
+        redirect_to @booking
+      else
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 

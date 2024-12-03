@@ -3,14 +3,6 @@
 <p><%= @event.description %></p>
 <p><%= @event.location %></p>
 <p><%= @event.date_time %></p>
-<% if @event.tickets_remaining == 0 %>
-    <p> Sold out! </p>
-<% end %>
-
-<p>
-    <% if @event.tickets_remaining > 0 %>
-        <%= link_to "Create booking", new_booking_path(@event.id) %>
-    <% end %>
-</p>
+<p><%= link_to "Go to bookings page", new_booking_path(@event.id) %></p>
 
 <a href="/users#index">Back to user profile</a>

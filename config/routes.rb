@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root "users#index"
+  # get "welcome/index"
+  root "welcome#index"
+  resources :welcome
   resources :events, only: [:index, :show, :new, :create] do
     get :my_events, on: :collection
   end
