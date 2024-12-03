@@ -1,0 +1,12 @@
+<h1>Welcome#index</h1>
+<p><%= link_to "Login", users_path %></p>
+<ul>
+  <% @welcomes.each do |welcome| %>
+    <li>
+      <% cache welcome do %>
+        <%= welcome.service %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
