@@ -1,0 +1,14 @@
+<h1>Booked Events#index</h1>
+
+<ul>
+  <table>
+  <% @booked_events.each do |booked_event| %>
+    <tr>
+      <td><%= booked_event.title %></td>
+      <td><%= booked_event.total_number_of_tickets %></td>
+    </tr>
+  <% end %>
+  </table>
+</ul>
+
+<a href="/users#index">Back to user profile</a>

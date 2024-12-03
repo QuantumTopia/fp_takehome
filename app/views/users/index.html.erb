@@ -1,7 +1,7 @@
-<h1>Hi There!!</h1>
-<%= link_to "Create event", new_event_path %>
-<a href="/events#index">Events</a>
-<%= link_to "My events", my_events_events_path %>
-<p>View events signed up for</p>
+<h1>Hi There <%= current_user.email %>!!</h1>
+<p><%= link_to "Create event", new_event_path %></p>
+<p><a href="/events#index">Events</a></p>
+<p><%= link_to "My events", my_events_events_path %></p>
+<p><%= link_to "Booked events", booked_events_bookings_path %></p>
 
 <%= button_to "logout", destroy_user_session_path, method: :delete  %>

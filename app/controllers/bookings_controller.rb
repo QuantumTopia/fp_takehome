@@ -23,4 +23,8 @@ class BookingsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def booked_events
+    @booked_events = Booking.select("title, sum(number_of_tickets) as total_number_of_tickets").joins(:event).group(:event_id).where(user_id: current_user.id)
+  end
 end
