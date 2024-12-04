@@ -27,4 +27,14 @@ class BookingControllerTest < ActionDispatch::IntegrationTest
     get new_booking_url @event1.id
     assert_response :redirect
   end
+
+  # ToDo
+  # User can view bookings they have made when logged in
+  # Bookings cannot be viewed if not logged in
+  # User cannot view bookings for other users
+  # Not allowed to make a booking for an event that does not exist
+  # Not allowed to book more than the remaining number of tickets +edge cases (+-1 ticket)
+  # Allowed to book less than or equal to the remaining number of tickets +edge cases (+-1 ticket)
+  # Allowed to book tickets concurrently (current rudimentary locking will not allow)
+  # Not allowed to book tickets concurrently if total exceeds total remaining tickets
 end
