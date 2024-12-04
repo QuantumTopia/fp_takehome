@@ -1,6 +1,9 @@
 # README
 
 * Notes:
+*   Booking cancellation, event removal, not showing events that have passed and 
+*       relevant tests have not been added.
+*
 *   Basic form validations have not been implemented such as data types and valid 
 *       values. Form error display does not work.
 *

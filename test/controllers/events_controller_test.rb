@@ -25,4 +25,5 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   # User does not get events they have not created
   # User cannot create event without supplying necessary information
   # User cannot create event if not logged in
+  # Events with a date that has passed do not show
 end
