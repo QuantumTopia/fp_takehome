@@ -23,5 +23,7 @@
 *   TDD: a lot of trial and error when setting up the project as I have no set up
 *       a fresh rails project before, so TDD approach was not efficient, which
 *       can be seen from the git commit history.
+*
+*   Database root password is committed to the repo!!
 
 # fp_takehome
