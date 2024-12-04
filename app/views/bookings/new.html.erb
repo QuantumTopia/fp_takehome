@@ -1,11 +1,12 @@
-<h1>Booking#new</h1>
+<p>Logged in as <%= current_user.email %><%= button_to "logout", destroy_user_session_path, method: :delete  %></p>
 
 <% @event = Event.find(params[:event_id]) %>
-<p><%= @event.tickets_available %></p>
+<h1>Booking <%= @event.title %></h1>
+<p>Total spaces for event: <%= @event.tickets_available %></p>
 <% if @event.tickets_remaining == 0 %>
-    <p> Sold out! </p>
+    <p> Event Sold out! </p>
 <% else %>
-    <p> <%= @event.tickets_remaining %> </p>
+    <p> Tickets remaining: <%= @event.tickets_remaining %> </p>
 <% end %>
 
 <p>

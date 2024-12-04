@@ -1,9 +1,22 @@
-<h1>Events#index</h1>
+<% if current_user %>
+    <p>Logged in as <%= current_user.email %><%= button_to "logout", destroy_user_session_path, method: :delete  %></p>
+<% end %>
 
-<ul>
+<table>
+  <tr>
+    <td>Event</td><td>Description</td><td>date</td>
+  </tr>
   <% @events.each do |event| %>
-    <li>
-      <%= link_to event.title, event %>
-    </li>
+    <tr>
+      <td>
+        <%= link_to event.title, event %>
+      </td>
+      <td>
+        <%= event.description %>
+      </td>
+      <td>
+        <%= event.date_time %>
+      </td>
+    </tr>
   <% end %>
-</ul>
+</table>

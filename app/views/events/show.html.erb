@@ -1,8 +1,10 @@
+<p>Logged in as <%= current_user.email %><%= button_to "logout", destroy_user_session_path, method: :delete  %></p>
 <h1><%= @event.title %></h1>
-
-<p><%= @event.description %></p>
-<p><%= @event.location %></p>
-<p><%= @event.date_time %></p>
-<p><%= link_to "Go to bookings page", new_booking_path(@event.id) %></p>
-
+<table>
+<tr>
+<tr><td>Event description</td><td><%= @event.description %></td></tr>
+<tr><td>Event location</td><td><%= @event.location %></td></tr>
+<tr><td>Event date</td><td><%= @event.date_time %></td></tr>
+<tr><td>Booking link</td><td><%= link_to "Go to bookings page", new_booking_path(@event.id) %></td></tr>
+</table>
 <a href="/users#index">Back to user profile</a>

@@ -1,7 +1,6 @@
-<h1>Hi There <%= current_user.email %>!!</h1>
+<p>Logged in as <%= current_user.email %><%= button_to "logout", destroy_user_session_path, method: :delete  %></p>
 <p><%= link_to "Create event", new_event_path %></p>
 <p><a href="/events#index">Events</a></p>
 <p><%= link_to "My events", my_events_events_path %></p>
 <p><%= link_to "Booked events", booked_events_bookings_path %></p>
-
-<%= button_to "logout", destroy_user_session_path, method: :delete  %>
+<p><%= link_to "Home", welcome_index_path %></p>

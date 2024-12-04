@@ -1,14 +1,14 @@
-<h1>Booked Events#index</h1>
+<p>Logged in as <%= current_user.email %><%= button_to "logout", destroy_user_session_path, method: :delete  %></p>
+<h1>Booked Events</h1>
 
-<ul>
-  <table>
-  <% @booked_events.each do |booked_event| %>
-    <tr>
-      <td><%= booked_event.title %></td>
-      <td><%= booked_event.total_number_of_tickets %></td>
-    </tr>
-  <% end %>
-  </table>
-</ul>
+<table>
+<tr><td>Event</td><td>Number of tickets booked</td></tr>
+<% @booked_events.each do |booked_event| %>
+  <tr>
+    <td><%= booked_event.title %></td>
+    <td><%= booked_event.total_number_of_tickets %></td>
+  </tr>
+<% end %>
+</table>
 
 <a href="/users#index">Back to user profile</a>
