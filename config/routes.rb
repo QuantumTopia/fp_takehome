@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # get "welcome/index"
   root "welcome#index"
   resources :welcome
   resources :events, only: [:index, :show, :new, :create] do

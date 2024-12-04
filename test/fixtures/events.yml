@@ -5,11 +5,15 @@ one:
   description: MyString
   location: MyString
   date_time: 2024-11-21 20:40:22
-  tickets_available: 1
+  tickets_available: 100
+  user: one
+  tickets_remaining: 100
 
 two:
   title: MyString
   description: MyString
   location: MyString
   date_time: 2024-11-21 20:40:22
-  tickets_available: 1
+  tickets_available: 50
+  user: two
+  tickets_remaining: 50
